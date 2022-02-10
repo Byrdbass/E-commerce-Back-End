@@ -56,8 +56,8 @@ router.delete('/:id', async (req, res) => {
       res.status(404).json({ message: 'No Category found with that id'})
       return;
     }
-    //can i Add a message for succesful deletion here?
-    res.status(200).json(categoryData);
+    //can i Add a message for successful deletion here?
+    res.status(200).json( {category_deleted: categoryData, message: "Category Successfully Deleted"});
   } catch (err) {
     res.status(500).json(err);
   }
